@@ -1,9 +1,0 @@
-version: '3.2'
-services:
-  web-client:
-    restart: always
-    stdin_open: true
-    tty: true
-    image: beamylabs/beamybroker-web-client:${BEAMYWEBCLIENT_TAG:-latest}
-    ports:
-     - "8080:8080"
