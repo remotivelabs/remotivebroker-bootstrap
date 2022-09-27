@@ -76,9 +76,9 @@ sudo scripts/install-service.sh
 
 ## Use a specific version (advanced feature)
 
-To pull a specific version you can specify custom tag for `BEAMYBROKER_TAG` or
-`BEAMYWEBCLIENT_TAG`, as in:
+To pull a specific version you can specify custom tag for `REMOTIVEBROKER_TAG` or
+`REMOTIVEWEBAPP_TAG`, as in:
 
 ```bash
-BEAMYBROKER_TAG=v0.0.7-4-g12 docker-compose up -d
+REMOTIVEBROKER_TAG=v0.0.7-4-g12 docker-compose up -d
 ```
