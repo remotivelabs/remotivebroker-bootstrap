@@ -11,7 +11,7 @@ docker-compose up -d
 This command only needs to be run once. It is persistent over system reboot --
 the containers will be restarted after a reboot, over and over again.
 
-Point your web browser at the machine running BeamyBroker, an address like
+Point your web browser at the machine running RemotiveBroker, an address like
 `http://192.0.2.42:8080/`. If you are connected to a hosted WLAN Access Point
 like `beamylabs`, the address should be `http://192.168.4.1:8080/`.
 
@@ -20,7 +20,7 @@ NOTE: if you change your interface settings you must restart by do doing
 
 ### Start in distributed mode
 
-If you want to run BeamyBroker in the special distributed mode, its node name
+If you want to run RemotiveBroker in the special distributed mode, its node name
 needs to be set. Run it like this:
 
 ```bash
@@ -66,7 +66,7 @@ NODE_NAME=$(scripts/resolve-ip.sh eth0) ./upgrade.sh
 
 ### Upgrade through the web interface
 
-It is possible to trigger an upgrade through the BeamyBroker web interface.
+It is possible to trigger an upgrade through the RemotiveBroker web interface.
 This require a service to be running. To install and start this service (only
 needed once):
 
