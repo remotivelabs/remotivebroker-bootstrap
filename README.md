@@ -1,7 +1,7 @@
 # RemotiveBroker bootstrapped
 ## Run it yourself
 
-RemotiveLabs provides integrations to various platforms, however in many cases 
+Remotive Labs provides integrations to various platforms, however in many cases 
 you like to need the host of your choice. If so; you are in the correct location, 
 keep reading.
 
@@ -25,6 +25,23 @@ the containers will be restarted after a reboot, over and over again.
 
 Point your web browser at the machine running RemotiveBroker, an address like
 `http://192.0.2.42:8080/`. 
+
+
+**Please note**, *the following license applies to the usage of Remotive Labs products, which is also shown when you run `docker-compose up` in attached mode.*
+```
+##########################################################################################
+      You are using software provided by Remotive Labs AB pursuant to the
+      terms of the End User License Agreement located at
+      https://www.remotivelabs.com/license. This license sets out the only
+      licensed rights granted to you with respect to this software.
+      By downloading or using such software, you accept and agree to the
+      terms of his license. This license is valid until 'your end date will be shown here'.
+      After this date, you need to either renew your license or cease
+      all use of the software.
+##########################################################################################
+```
+
+**DONE**! Now improve your experience by applying next step. 
 
 
 ### Step 2/2 (optional, quality of life improvement) Upgrade through the web interface
