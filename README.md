@@ -2,7 +2,7 @@
 ## Run it yourself
 
 Remotive Labs provides integrations to various platforms, however in many cases 
-you like to need the host of your choice. If so; you are in the correct location, 
+you might prefer to host the software in a machine of your choice. If so; you are in the correct location, 
 keep reading.
 
 prerequisites:
@@ -86,6 +86,10 @@ iface can1 inet manual
   down   /sbin/ip link set can1 down
 ```
 
+## LIN, Flexray and ethernet
+
+These protocols are carried over ethernet, however dependant on you HW choice let us help. Reach out on [hello@remotivelabs.com](mailto:hello@remotivelabs.com?subject=Help%20with%20setting%20up%20interfaces)
+
 ## Advanced topics
 
 
@@ -136,3 +140,5 @@ To start from a clean configuration you could do:
 ```bash
 rm remotivelabs-bootstrap/configuration/boot
 ```
+
+you can always reach out to us on [hello@remotivelabs.com](mailto:hello@remotivelabs.com?subject=Hello)
