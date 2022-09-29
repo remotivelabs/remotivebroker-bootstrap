@@ -1,5 +1,17 @@
-# RemotiveBroker bootstraped
+# RemotiveBroker bootstrapped
 ## Run it yourself
+
+RemotiveLabs provides integrations to various platforms, however in many cases 
+you like to need the host of your choice. If so; you are in the correct location, 
+keep reading.
+
+prerequisites:
+- `docker` 
+- `docker-compose`
+- `git` 
+- `inotify-tools` (optional)
+
+### Step 1/2 start docker 
 
 Clone this repository and make sure you have `docker` and `docker-compose`
 installed, then run:
@@ -12,11 +24,53 @@ This command only needs to be run once. It is persistent over system reboot --
 the containers will be restarted after a reboot, over and over again.
 
 Point your web browser at the machine running RemotiveBroker, an address like
-`http://192.0.2.42:8080/`. If you are connected to a hosted WLAN Access Point
-like `beamylabs`, the address should be `http://192.168.4.1:8080/`.
+`http://192.0.2.42:8080/`. 
 
-NOTE: if you change your interface settings you must restart by do doing
-[STOP](#stop) and the start it again like above.
+
+### Step 2/2 (optional, quality of life improvement) Upgrade through the web interface
+
+In order to allow upgrades triggered by the user interface you need to install a 
+custom service. To install and start this service (only needed once):
+
+```bash
+sudo scripts/install-service.sh
+```
+
+> This script assumes that you are running on a host where `systemd` is present 
+
+## Custom can interfaces
+
+RemotiveBroker support all can interfaces which supports `socket-can`. Many USB 
+can connectors are supported by default by the linux kernel. Typically it will appear
+when you do `ip a` then you simply need to do:
+```bash
+#can/canfd
+ip link set can0 type can bitrate 500000 dbitrate 2000000 restart-ms 1000 berr-reporting on fd on
+#can
+ip link set can0 type can bitrate 500000 dbitrate 2000000 restart-ms 1000 berr-reporting on 
+```
+
+Setting up these interfaces on boot on Raspbian would look as follows
+```bash
+cat /etc/network/interfaces.d/can
+```
+
+```bash
+auto can0
+iface can0 inet manual
+  pre-up /sbin/ip link set can0 type can bitrate 500000 dbitrate 2000000 restart-ms 1000 berr-reporting on fd on
+  up     /sbin/ip link set can0 txqueuelen 65536 up
+  down   /sbin/ip link set can0 down
+
+auto can1
+iface can1 inet manual
+  pre-up /sbin/ip link set can1 type can bitrate 500000 dbitrate 2000000 restart-ms 1000 berr-reporting on fd on
+  up     /sbin/ip link set can1 txqueuelen 65536 up
+  down   /sbin/ip link set can1 down
+```
+
+## Advanced topics
+
 
 ### Start in distributed mode
 

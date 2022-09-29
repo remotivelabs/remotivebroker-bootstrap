@@ -2,6 +2,11 @@
 
 cd "${0%/*}" || exit 1
 
+if ! command >&/dev/null -v inotifywait; then
+  printf "Missing executabe inotifywait, do you have inotify-tools installed?\n" 
+  exit 1
+fi
+
 if [[ "$EUID" != 0 ]]; then
   printf "Please give me root privileges by running me with sudo or doas.\n"
   exit 1
