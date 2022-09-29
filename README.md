@@ -89,29 +89,21 @@ iface can1 inet manual
 ## Advanced topics
 
 
+
+
 ### Start in distributed mode
 
-If you want to run RemotiveBroker in the special distributed mode, its node name
-needs to be set. Run it like this:
+This mode enables you to daisy chain machines running RemotiveBroker allowing you to increase number of physical interfaces.
+read more [here](configuration_distributed/README.md)
 
-```bash
-NODE_NAME=$(scripts/resolve-ip.sh eth0) docker-compose up -d
-```
 
-`$(scripts/resolve-ip.sh eth0)` assumes that the interface for your main
-ethernet connection is called `eth0`. If that's not the case, you need to
-change `eth0` to the correct name. (Hint: you can can find your interface name
-using `ip addr` or `ifconfig`).
-
-Example configuration and detailed instructions can be found [here](configuration_distributed/README.md).
-
-## Stop
+### Stop
 
 ```bash
 docker-compose down
 ```
 
-## Upgrade (optionally in distributed mode)
+### Upgrade
 
 When you upgrade; remember to upgrade **THIS** repository as well `git pull`,
 as examples are continuously updated and improved. You will also find the
@@ -128,28 +120,19 @@ Alternatively, just pull the latest container images manually:
 docker-compose pull
 ```
 
-If you are running in distributed mode, the same required node name should be
-passed to the script, similar to when you first started the system:
-
-```base
-NODE_NAME=$(scripts/resolve-ip.sh eth0) ./upgrade.sh
-```
-
-### Upgrade through the web interface
-
-It is possible to trigger an upgrade through the RemotiveBroker web interface.
-This require a service to be running. To install and start this service (only
-needed once):
-
-```bash
-sudo scripts/install-service.sh
-```
-
-## Use a specific version (advanced feature)
+### Use a specific version
 
 To pull a specific version you can specify custom tag for `REMOTIVEBROKER_TAG` or
 `REMOTIVEWEBAPP_TAG`, as in:
 
 ```bash
 REMOTIVEBROKER_TAG=v0.0.7-4-g12 docker-compose up -d
+```
+> If you have done `Step 2/2` above, you can conveniently pick version from the `About` in the user interface.
+
+### Trubleshoot
+
+To start from a clean configuration you could do:
+```bash
+rm remotivelabs-bootstrap/configuration/boot
 ```

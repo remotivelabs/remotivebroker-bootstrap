@@ -10,19 +10,7 @@
           "namespace": "VirtualInterface",
           "type": "virtual"
         }
-      ],
-      "gateway": {
-        "gateway_pid": "gateway_pid",
-        "tcp_socket_port": 4041
-      },
-      "auto_config_boot_server": {
-        "port": 4001,
-        "server_pid": "auto_config_boot_server_pid"
-      },
-      "grpc_server": {
-        "port": 50051
-      },
-      "reflectors": []
+      ]
     },
     {
       "node_name": "node@master.com",
@@ -37,19 +25,7 @@
           "target_host": "127.0.0.1",
           "target_port": 2001
         }
-      ],
-      "gateway": {
-        "gateway_pid": "gateway_pid",
-        "tcp_socket_port": 4042
-      },
-      "auto_config_boot_server": {
-        "port": 4002,
-        "server_pid": "auto_config_boot_server_pid"
-      },
-      "grpc_server": {
-        "port": 50051
-      },
-      "reflectors": []
+      ]
     }
   ]
 }

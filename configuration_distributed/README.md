@@ -7,14 +7,17 @@ The connected devices can be of different kind. Linux machines can coexist with 
 ## Setup
 
 1. Make sure all nodes (machines) have license installed.
-2. For all nodes - go to the beamylabs-start folder and do:
+2. For all nodes - go to the `remotivelabs-bootstrap` folder and do:
 ```bash
 docker-compose down
 NODE_NAME=xxx.xxx.xxx.xxx docker-compose up -d
 ```
-> make sure to replace `xxx.xxx.xxx.xxx` with the proper ip of the machine.
+> Make sure to replace `xxx.xxx.xxx.xxx` with the proper ip of the machine, alternatively you can parametrise by doing: 
+>```
+>NODE_NAME=$(scripts/resolve-ip.sh eth0) docker-compose up -d
+>```
 
-3. Upload a valid configuration (or modify the configuration in this folder) to all the relevant nodes.
+3. Upload a valid configuration (or modify the configuration in this folder) to all the relevant nodes. All nodes should use the same confiuration file.
 4. Using the web interface you should now se all namespaces listed on all machines.
 5. Done!
 
@@ -31,19 +34,7 @@ All node names must be prefixed with `node`. `slaveX.com` and `master.com` needs
         {
           ...
         }
-      ],
-      "gateway": {
-        "gateway_pid": "gateway_pid",
-        "tcp_socket_port": 4041
-      },
-      "auto_config_boot_server": {
-        "port": 4001,
-        "server_pid": "auto_config_boot_server_pid"
-      },
-      "grpc_server": {
-        "port": 50051
-      },
-      "reflectors": []
+      ]
     },
     {
       "node_name": "node@master.com",
@@ -52,28 +43,26 @@ All node names must be prefixed with `node`. `slaveX.com` and `master.com` needs
         {
           ...
         }
-      ],
-      "gateway": {
-        "gateway_pid": "gateway_pid",
-        "tcp_socket_port": 4042
-      },
-      "auto_config_boot_server": {
-        "port": 4002,
-        "server_pid": "auto_config_boot_server_pid"
-      },
-      "grpc_server": {
-        "port": 50051
-      },
-      "reflectors": []
+      ]
     }
   ]
 }
 
 ```
 
+## Upgrade while in distributed mode
+
+If you are running in distributed mode, the same required node name should be
+passed to the script, similar to when you first started the system:
+
+```base
+NODE_NAME=$(scripts/resolve-ip.sh eth0) ./upgrade.sh
+```
+
+
 ## Trubleshoot
 
 To start from a clean configuration you could do:
 ```bash
-rm beamylabs-start/configuration/boot
+rm remotivelabs-bootstrap/configuration/boot
 ```
