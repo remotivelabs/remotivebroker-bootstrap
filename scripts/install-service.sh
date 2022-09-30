@@ -18,7 +18,8 @@ if [[ -z "$BEAMYHOME" ]]; then
   exit 1
 fi
 
-BEAMYUSER="${SUDO_USER:-${DOAS_USER}}"
+FALLBACK="$(whoami)"
+BEAMYUSER="${SUDO_USER:-${DOAS_USER:-${FALLBACK}}}"
 if [[ -z "$BEAMYUSER" ]]; then
   printf "Could not get real user running the script.\n"
   exit 1
