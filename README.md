@@ -130,11 +130,11 @@ To pull a specific version you can specify custom tag for `REMOTIVEBROKER_TAG` o
 `REMOTIVEWEBAPP_TAG`, as in:
 
 ```bash
-REMOTIVEBROKER_TAG=v0.0.7-4-g12 docker-compose up -d
+REMOTIVEBROKER_TAG=v1.2.3 docker-compose up -d
 ```
 > If you have done `Step 2/2` above, you can conveniently pick version from the `About` in the user interface.
 
-### Trubleshoot
+### Troubleshoot
 
 To start from a clean configuration you could do:
 ```bash
