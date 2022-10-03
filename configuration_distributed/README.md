@@ -1,6 +1,6 @@
 # Get going with distributed setup
 
-Distributed setup allows chaining devices enabling muliple physical ports. Typically a scenario would be where the host has not enough can ports. 
+Distributed setup allows chaining devices enabling muliple physical ports. Typically a scenario would be where the host has not enough CAN ports. 
 
 The connected devices can be of different kind. Linux machines can coexist with Raspberry pie:s.
 
@@ -60,7 +60,7 @@ NODE_NAME=$(scripts/resolve-ip.sh eth0) ./upgrade.sh
 ```
 
 
-## Trubleshoot
+## Troubleshoot
 
 To start from a clean configuration you could do:
 ```bash
