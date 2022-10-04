@@ -11,7 +11,7 @@ prerequisites:
 - `git` 
 - `inotify-tools` (optional)
 
-### Step 1/2 start docker 
+### Step 1/3 start using docker 
 
 Clone this repository and make sure you have `docker` and `docker-compose`
 installed, then run:
@@ -44,7 +44,7 @@ Point your web browser at the machine running RemotiveBroker, an address like
 **DONE**! Now improve your experience by applying next step. 
 
 
-### Step 2/2 (optional, quality of life improvement) Upgrade through the web interface
+### Step 2/3 (optional, quality of life improvement) Upgrade through the web interface
 
 In order to allow upgrades triggered by the user interface you need to install a 
 custom service. To install and start this service (only needed once):
@@ -54,6 +54,10 @@ sudo scripts/install-service.sh
 ```
 
 > This script assumes that you are running on a host where `systemd` is present 
+
+### Step 3/3 Get evalutaion license
+
+Naviate to the About tab in the web interface, additonal instructions can be found [here](https://remotivelabs.github.io).
 
 ## Custom can interfaces
 
@@ -141,4 +145,4 @@ To start from a clean configuration you could do:
 rm remotivelabs-bootstrap/configuration/boot
 ```
 
-you can always reach out to us on [hello@remotivelabs.com](mailto:hello@remotivelabs.com?subject=Hello)
+You can always reach out to us on [hello@remotivelabs.com](mailto:hello@remotivelabs.com?subject=Hello)
