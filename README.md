@@ -1,7 +1,8 @@
 # RemotiveBroker bootstrapped
+
 ## Run it yourself
 
-Remotive Labs provides integrations to various platforms, however in many cases 
+Remotive Labs provides integrations to various platforms [(read more here)]([https://remotivelabs.github.io/]), however in many cases 
 you might prefer to host the software in a machine of your choice. If so; you are in the correct location, 
 keep reading.
 
@@ -57,7 +58,7 @@ sudo scripts/install-service.sh
 
 ### Step 3/3 Get evalutaion license
 
-Naviate to the About tab in the web interface, additonal instructions can be found [here](https://remotivelabs.github.io).
+Navigate to the About tab in the web interface, additonal instructions can be found [here](https://remotivelabs.github.io).
 
 ## Custom can interfaces
 
