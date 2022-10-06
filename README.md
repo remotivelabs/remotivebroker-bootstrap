@@ -92,7 +92,57 @@ iface can1 inet manual
 
 ## LIN, Flexray and ethernet
 
-These protocols are carried over ethernet, however dependant on you HW choice let us help. Reach out on [hello@remotivelabs.com](mailto:hello@remotivelabs.com?subject=Help%20with%20setting%20up%20interfaces)
+These protocols are carried over ethernet, however dependant on you HW choice let us help. Reach out on [hello@remotivelabs.com](mailto:hello@remotivelabs.com?subject=Help%20with%20setting%20up%20interfaces). 
+Some guideance can be located below.
+
+### Technica
+
+It's recommended to install a bridge module on the same host machine. The scrips provided [here](scripts/install-teknika.sh) will install 2 services, allowing two Technica devices (thus enabling 2 flexray interfaces), one on port 51111 and the other on port 51112. 
+
+!> Make sure that your Techinca devices is configured to use `PLP` headers and also make sure to note specified `Destination MAC` (available by clicking `SPY`) typically `01:00:5e:00:00:00`. 
+
+Connect your Technica device to the secondary usb ethernet interface `eth1` which is mentioned above. As mulitcast address provide `Destination MAC`.
+```json
+{
+  "chains": [
+      {
+         "type": "flexray",
+         "device_name": "flexray0",
+         "namespace": "MyFlexrayNamespace",
+         "config": {
+            "target_host": "127.0.0.1",
+            "target_port": 51111,
+            "hardware": "Technica_CM_CAN_COMBO",
+            "target_config": {
+               "interface": "eth1",
+               "multicast": "01:00:5e:00:00:00"
+            }
+         },
+         "database": "fibex_files/flexray.xml"
+      }
+   ]
+}
+```
+
+### Host Mobility MX-4 T30 FR as a flexray forwarding device
+
+The binary located [here](scripts/flexray/flexray2ip.new) need to be installed on the MX-4 T30 FR device. Go [here](scripts/flexray/README.txt) for more information.
+```json
+{
+  "chains": [
+      {
+         "type": "flexray",
+         "device_name": "flexray0",
+         "namespace": "MyFlexrayNamespace",
+         "config": {
+            "target_host": "127.0.0.1",
+            "target_port": 51111
+         },
+         "database": "fibex_files/flexray.xml"
+      }
+   ]
+}
+```
 
 ## Advanced topics
 
