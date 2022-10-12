@@ -56,7 +56,7 @@ sudo scripts/install-service.sh
 
 > This script assumes that you are running on a host where `systemd` is present 
 
-### Step 3/3 Get evalutaion license
+### Step 3/3 Get evaluation license
 
 Navigate to the About tab in the web interface, additonal instructions can be found [here](https://remotivelabs.github.io).
 
