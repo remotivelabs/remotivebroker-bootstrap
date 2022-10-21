@@ -83,7 +83,6 @@ iface can0 inet manual
   pre-up /sbin/ip link set can0 type can bitrate 500000 dbitrate 2000000 restart-ms 1000 berr-reporting on fd on
   up     /sbin/ip link set can0 txqueuelen 65536 up
   down   /sbin/ip link set can0 down
-
 auto can1
 iface can1 inet manual
   pre-up /sbin/ip link set can1 type can bitrate 500000 dbitrate 2000000 restart-ms 1000 berr-reporting on fd on
@@ -91,7 +90,7 @@ iface can1 inet manual
   down   /sbin/ip link set can1 down
 ```
 
-## LIN, Flexray and ethernet
+## LIN, Flexray and Ethernet
 
 These protocols are carried over ethernet, however dependant on you HW choice let us help. Reach out on [hello@remotivelabs.com](mailto:hello@remotivelabs.com?subject=Help%20with%20setting%20up%20interfaces). 
 Some guideance can be located below.
@@ -155,6 +154,13 @@ The binary located [here](scripts/flexray/flexray2ip.new) need to be installed o
 This mode enables you to daisy chain machines running RemotiveBroker allowing you to increase number of physical interfaces.
 read more [here](configuration_distributed/README.md)
 
+### Time synchronization using PTP
+
+Our prebuild image contains binaries for ptp /home/pi/src/linuxptp typically there is a PTP Grandmaster, to connect go ahead and do:
+```bash
+sudo ./ptp4l -m -i eth0 -S --step_threshold=1 -f configs/automotive-slave.cfg
+```
+> Make sure to specify correct interface in the example above `eth0` is used.
 
 ### Stop
 
