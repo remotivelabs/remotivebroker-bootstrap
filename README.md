@@ -111,7 +111,7 @@ Connect your Technica device to the secondary usb ethernet interface `eth1` whic
          "namespace": "MyFlexrayNamespace",
          "config": {
             "target_host": "127.0.0.1",
-            "target_port": 51111,
+            "target_port": 51112,
             "hardware": "Technica_CM_CAN_COMBO",
             "target_config": {
                "interface": "eth1",
