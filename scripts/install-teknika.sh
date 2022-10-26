@@ -28,11 +28,11 @@ mkdir -p /etc/teknika
 # We avoid overwriting any user changes to the ports
 if ! grep -sq "^PORT=" /etc/teknika/instance1; then
   touch /etc/teknika/instance1
-  printf >/etc/teknika/instance1 "PORT=51111\n"
+  printf >/etc/teknika/instance1 "PORT=51112\n"
 fi
 if ! grep -sq "^PORT=" /etc/teknika/instance2; then
   touch /etc/teknika/instance2
-  printf >/etc/teknika/instance2 "PORT=51112\n"
+  printf >/etc/teknika/instance2 "PORT=51113\n"
 fi
 
 sed >/etc/systemd/system/teknika@.service \

@@ -97,7 +97,7 @@ Some guideance can be located below.
 
 ### Technica
 
-It's recommended to install a bridge module on the same host machine. The scrips provided [here](scripts/install-teknika.sh) will install 2 services, allowing two Technica devices (thus enabling 2 flexray interfaces), one on port 51111 and the other on port 51112. 
+It's recommended to install a bridge module on the same host machine. The scrips provided [here](scripts/install-teknika.sh) will install 2 services, allowing two Technica devices (thus enabling 2 flexray interfaces), one on port 51112 and the other on port 51113. 
 
 !> Make sure that your Techinca devices is configured to use `PLP` headers and also make sure to note specified `Destination MAC` (available by clicking `SPY`) typically `01:00:5e:00:00:00`. 
 
