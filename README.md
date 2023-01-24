@@ -68,9 +68,15 @@ when you do `ip a` then you simply need to do:
 ```bash
 #can/canfd
 ip link set can0 type can bitrate 500000 dbitrate 2000000 restart-ms 1000 berr-reporting on fd on
+## less capable device 
 #can
-ip link set can0 type can bitrate 500000 dbitrate 2000000 restart-ms 1000 berr-reporting on 
+ip link set can0 type can bitrate 500000 dbitrate 2000000 restart-ms 1000 berr-reporting on
+
+## if above doesn't work try
+ip link set can2 up type can bitrate 500000 restart-ms 1000
 ```
+> Remember to run as sudo if you run from shell
+
 
 Setting up these interfaces on boot on Raspbian would look as follows
 ```bash
@@ -88,6 +94,12 @@ iface can1 inet manual
   pre-up /sbin/ip link set can1 type can bitrate 500000 dbitrate 2000000 restart-ms 1000 berr-reporting on fd on
   up     /sbin/ip link set can1 txqueuelen 65536 up
   down   /sbin/ip link set can1 down
+
+## if above doesn't work try
+iface can2 inet manual
+  pre-up /sbin/ip link set can2 up type can bitrate 500000 restart-ms 1000
+  up     /sbin/ip link set can2 txqueuelen 65536 up
+  down   /sbin/ip link set can2 down
 ```
 
 ## LIN, Flexray and Ethernet
