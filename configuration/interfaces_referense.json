@@ -8,8 +8,8 @@
       "short_names": false,
       "_comment_time_stamps": [
         "Advanced, optional",
-        "Use timestamps provided by transceiver, currently only supported for type",
-        "Flexray"
+        "Use timestamps provided by transceiver, currently supported for types",
+        "flexray, can, canfd"
       ],
       "time_stamp": "hardware"
     },
