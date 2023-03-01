@@ -86,15 +86,16 @@ cat /etc/network/interfaces.d/can
 ```bash
 auto can0
 iface can0 inet manual
-  pre-up /sbin/ip link set can0 type can bitrate 500000 dbitrate 2000000 restart-ms 1000 berr-reporting on fd on
+  pre-up /sbin/ip link set can0 type can up bitrate 500000 dbitrate 2000000 restart-ms 1000 berr-reporting on fd on
   up     /sbin/ip link set can0 txqueuelen 65536 up
   down   /sbin/ip link set can0 down
 auto can1
 iface can1 inet manual
-  pre-up /sbin/ip link set can1 type can bitrate 500000 dbitrate 2000000 restart-ms 1000 berr-reporting on fd on
+  pre-up /sbin/ip link set can1 type can up bitrate 500000 dbitrate 2000000 restart-ms 1000 berr-reporting on fd on
   up     /sbin/ip link set can1 txqueuelen 65536 up
   down   /sbin/ip link set can1 down
 
+## some devices do not support berr-reporting on
 ## if above doesn't work try
 iface can2 inet manual
   pre-up /sbin/ip link set can2 up type can bitrate 500000 restart-ms 1000
