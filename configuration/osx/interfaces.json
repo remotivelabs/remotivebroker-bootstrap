@@ -9,7 +9,7 @@
     {
       "namespace": "UDPCanInterface",
       "type": "udp",
-      "human_file": "human/benchc.json",
+      "database": "human/benchc.json",
       "device_name": "udp2",
       "server_port": 2001,
       "target_host": "127.0.0.1",
@@ -20,7 +20,7 @@
       "type": "udp",
       "namespace": "DiagnosticsCanInterface",
       "device_name": "udp3",
-      "dbc_file": "can/diagnostics.dbc",
+      "database": "can/diagnostics.dbc",
       "server_port": 2002,
       "target_host": "127.0.0.1",
       "target_port": 2003,
