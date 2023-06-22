@@ -26,6 +26,6 @@ services:
     # set the variable in a .env file.
     # command: "${CUSTOM_COMMAND}"
     environment:
-      - REPLACE_OS_VARS=true
-      - COOKIE=test
-      - NODENAME=node@${NODE_NAME:-unset.example.com}
+      - RELEASE_DISTRIBUTION=name
+      - RELEASE_COOKIE=test
+      - RELEASE_NODE=node@${NODE_NAME:-unset.example.com}
