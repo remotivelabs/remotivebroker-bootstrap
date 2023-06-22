@@ -58,12 +58,12 @@ sudo scripts/install-service.sh
 
 ### Step 3/3 Get evaluation license
 
-Navigate to the About tab in the web interface, additonal instructions can be found [here](https://remotivelabs.github.io).
+Navigate to the About tab in the web interface, additional instructions can be found [here](https://remotivelabs.github.io).
 
 ## Custom can interfaces
 
 RemotiveBroker support all can interfaces which supports `socket-can`. Many USB 
-can connectors are supported by default by the linux kernel. Typically it will appear
+can connectors are supported by default by the linux kernel. Typically, it will appear
 when you do `ip a` then you simply need to do:
 ```bash
 #can/canfd
@@ -105,16 +105,16 @@ iface can2 inet manual
 
 ## LIN, Flexray and Ethernet
 
-These protocols are carried over ethernet, however dependant on you HW choice let us help. Reach out on [hello@remotivelabs.com](mailto:hello@remotivelabs.com?subject=Help%20with%20setting%20up%20interfaces). 
-Some guideance can be located below.
+These protocols are carried over ethernet, however dependent on you HW choice let us help. Reach out on [hello@remotivelabs.com](mailto:hello@remotivelabs.com?subject=Help%20with%20setting%20up%20interfaces). 
+Some guidance can be located below.
 
 ### Technica
 
 It's recommended to install a bridge module on the same host machine. The scrips provided [here](scripts/install-teknika.sh) will install 2 services, allowing two Technica devices (thus enabling 2 flexray interfaces), one on port 51112 and the other on port 51113. 
 
-!> Make sure that your Techinca devices is configured to use `PLP` headers and also make sure to note specified `Destination MAC` (available by clicking `SPY`) typically `01:00:5e:00:00:00`. 
+!> Make sure that your Technica devices is configured to use `PLP` headers and also make sure to note specified `Destination MAC` (available by clicking `SPY`) typically `01:00:5e:00:00:00`. 
 
-Connect your Technica device to the secondary usb ethernet interface `eth1` which is mentioned above. As mulitcast address provide `Destination MAC`.
+Connect your Technica device to the secondary usb ethernet interface `eth1` which is mentioned above. As multicast address provide `Destination MAC`.
 ```json
 {
   "chains": [
