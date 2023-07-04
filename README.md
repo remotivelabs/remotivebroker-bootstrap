@@ -2,7 +2,7 @@
 
 ## Run it yourself
 
-Remotive Labs provides integrations to various platforms [(read more here)]([https://remotivelabs.github.io/]), however in many cases 
+Remotive Labs provides integrations to various platforms ([read more](https://remotivelabs.github.io/)), however in many cases 
 you might prefer to host the software in a machine of your choice. If so; you are in the correct location, 
 keep reading.
 
