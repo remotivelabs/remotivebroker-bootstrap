@@ -29,7 +29,7 @@ All node names must be prefixed with `node`. `slaveX.com` and `master.com` needs
   "nodes": [
     {
       "node_name": "node@slave1.com",
-      "default_namespace": "VirtualInterface",
+      "default_namespace": "BodyCan",
       "chains": [
         {
           ...
@@ -38,7 +38,7 @@ All node names must be prefixed with `node`. `slaveX.com` and `master.com` needs
     },
     {
       "node_name": "node@master.com",
-      "default_namespace": "UDPCanInterface",
+      "default_namespace": "ChassisCan",
       "chains": [
         {
           ...
