@@ -1,34 +1,20 @@
 {
-  "default_namespace": "UDPCanInterface",
   "chains": [
     {
-      "device_name": "virtual",
-      "namespace": "VirtualInterface",
-      "type": "virtual"
+      "namespace": "BodyCan",
+      "type": "udp",
+      "database": "signal_databases/BodyCan.dbc",
+      "server_port": 2001,
+      "target_port": 2002,
+      "target_host": "127.0.0.1"
     },
     {
-      "namespace": "UDPCanInterface",
+      "namespace": "ChassisCan",
       "type": "udp",
-      "database": "can/test.dbc",
-      "device_name": "udp2",
-      "server_port": 2001,
-      "target_host": "127.0.0.1",
-      "target_port": 2000,
-      "fixed_payload_size": 8
+      "database": "signal_databases/ChassisCan.dbc",
+      "server_port": 2003,
+      "target_port": 2004,
+      "target_host": "127.0.0.1"
     }
-  ],
-
-  "gateway": {
-    "gateway_pid": "gateway_pid",
-    "tcp_socket_port": 4040
-  },
-  "auto_config_boot_server": {
-    "port": 4000,
-    "server_pid": "auto_config_boot_server_pid"
-  },
-  "grpc_server": {
-    "port": 50051
-  },
-  "reflectors": [
   ]
 }
