@@ -58,7 +58,7 @@ sudo scripts/install-service.sh
 
 ### Step 3/3 Get evaluation license
 
-Navigate to the About tab in the web interface, additional instructions can be found [here](https://remotivelabs.github.io).
+Navigate to you local broker [here](http://127.0.0.1:8080) and select the `License` tab and follow the instructions to aquire your license. 
 
 ## Custom can interfaces
 
