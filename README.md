@@ -8,17 +8,17 @@ keep reading.
 
 prerequisites:
 - `docker` 
-- `docker-compose`
+- `docker compose`
 - `git` 
 - `inotify-tools` (optional)
 
 ### Step 1/3 start using docker 
 
-Clone this repository and make sure you have `docker` and `docker-compose`
+Clone this repository and make sure you have `docker` and `docker compose`
 installed, then run:
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 This command only needs to be run once. It is persistent over system reboot --
@@ -28,7 +28,7 @@ Point your web browser at the machine running RemotiveBroker, an address like
 `http://192.0.2.42:8080/`. 
 
 
-**Please note**, *the following license applies to the usage of Remotive Labs products, which is also shown when you run `docker-compose up` in attached mode.*
+**Please note**, *the following license applies to the usage of Remotive Labs products, which is also shown when you run `docker compose up` in attached mode.*
 ```
 ##########################################################################################
       You are using software provided by Remotive Labs AB pursuant to the
@@ -178,7 +178,7 @@ sudo ./ptp4l -m -i eth0 -S --step_threshold=1 -f configs/automotive-slave.cfg
 ### Stop
 
 ```bash
-docker-compose down
+docker compose down
 ```
 
 ### Upgrade
@@ -195,7 +195,7 @@ git pull
 Alternatively, just pull the latest container images manually:
 
 ```base
-docker-compose pull
+docker compose pull
 ```
 
 ### Use a specific version
@@ -204,7 +204,7 @@ To pull a specific version you can specify custom tag for `REMOTIVEBROKER_TAG` o
 `REMOTIVEWEBAPP_TAG`, as in:
 
 ```bash
-REMOTIVEBROKER_TAG=v1.2.3 docker-compose up -d
+REMOTIVEBROKER_TAG=v1.2.3 docker compose up -d
 ```
 > If you have done `Step 2/2` above, you can conveniently pick version from the `About` in the user interface.
 
