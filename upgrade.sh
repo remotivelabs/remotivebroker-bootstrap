@@ -38,7 +38,7 @@ if ! docker compose --ansi never --env-file envfile pull; then
 fi
 
 docker compose --ansi never --env-file envfile down --remove-orphans
-docker-compose --ansi never --env-file envfile up -d
+docker compose --ansi never --env-file envfile up -d
 
 rpi=
 grep &>/dev/null -i "raspberry" /sys/firmware/devicetree/base/model && rpi="rpi"
