@@ -4,7 +4,7 @@ services:
     restart: always
     stdin_open: true
     tty: true
-    image: remotivelabs/remotive-web-app:${REMOTIVEWEBAPP_TAG:-latest}
+    image: docker.io/remotivelabs/remotive-web-app:sha-381925a@sha256:d8bd7ccaeb5fdfba02fe139cb788af18b8922a93101aa762f38d19419b8103d6
     volumes:
       - "${CONFIG_FOLDER:-./configuration}:/service_client/configuration"
     ports:
